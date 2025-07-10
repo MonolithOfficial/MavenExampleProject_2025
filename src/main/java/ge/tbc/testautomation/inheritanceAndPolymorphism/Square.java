@@ -6,6 +6,7 @@ public class Square extends Rectangle{
     public Square(double side) {
         super(side, side);
         this.side = side;
+        getArea();
     }
 
     @Override
@@ -14,7 +15,16 @@ public class Square extends Rectangle{
     }
 
     @Override
-    public final double getArea(){
-        return Math.pow(this.side, 2);
+    public double getArea(){
+        double area = Math.pow(this.side, 2);
+        this.area = area;
+        return area;
+    }
+
+    @Override
+    public String toString() {
+        return "Square{" +
+                "area=" + area +
+                '}';
     }
 }

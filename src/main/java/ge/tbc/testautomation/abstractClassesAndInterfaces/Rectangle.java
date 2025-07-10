@@ -1,6 +1,6 @@
 package ge.tbc.testautomation.abstractClassesAndInterfaces;
 
-public class Rectangle extends Shape implements IRecolorable, IResizable{
+public class Rectangle extends Shape implements IRecolorable, IResizable, Comparable {
     protected double sideA;
     protected double sideB;
 
@@ -31,5 +31,21 @@ public class Rectangle extends Shape implements IRecolorable, IResizable{
     @Override
     public void resize(int byValue) {
 
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (o instanceof Rectangle){
+            Rectangle otherRectangle = (Rectangle) o;
+            if (this.sideA == otherRectangle.sideA && this.sideB == otherRectangle.sideB){
+                return 0;
+            } else if (this.sideA < otherRectangle.sideA && this.sideB < otherRectangle.sideB) {
+                return -1;
+            }
+            else {
+                return 1;
+            }
+        }
+        return -1;
     }
 }
