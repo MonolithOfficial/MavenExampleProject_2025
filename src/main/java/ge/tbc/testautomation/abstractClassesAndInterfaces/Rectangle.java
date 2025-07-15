@@ -1,10 +1,12 @@
 package ge.tbc.testautomation.abstractClassesAndInterfaces;
 
-public class Rectangle extends Shape implements IRecolorable, IResizable, Comparable {
+import ge.tbc.testautomation.inheritanceAndPolymorphism.Square;
+
+public class Rectangle extends Shape implements IRecolorable, IResizable, Comparable<Rectangle> {
     protected double sideA;
     protected double sideB;
 
-    public Rectangle(double sideA, double sideB){
+    public Rectangle(double sideA, double sideB) {
         this.sideA = sideA;
         this.sideB = sideB;
     }
@@ -19,7 +21,7 @@ public class Rectangle extends Shape implements IRecolorable, IResizable, Compar
         return sideA * sideB;
     }
 
-    public void printName(){
+    public void printName() {
         System.out.println("RECTANGLE");
     }
 
@@ -34,18 +36,13 @@ public class Rectangle extends Shape implements IRecolorable, IResizable, Compar
     }
 
     @Override
-    public int compareTo(Object o) {
-        if (o instanceof Rectangle){
-            Rectangle otherRectangle = (Rectangle) o;
-            if (this.sideA == otherRectangle.sideA && this.sideB == otherRectangle.sideB){
-                return 0;
-            } else if (this.sideA < otherRectangle.sideA && this.sideB < otherRectangle.sideB) {
-                return -1;
-            }
-            else {
-                return 1;
-            }
+    public int compareTo(Rectangle o) {
+        if (this.sideA == o.sideA && this.sideB == o.sideB) {
+            return 0;
+        } else if (this.sideA < o.sideA && this.sideB < o.sideB) {
+            return -1;
+        } else {
+            return 1;
         }
-        return -1;
     }
 }

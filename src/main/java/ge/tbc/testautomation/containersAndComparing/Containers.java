@@ -44,6 +44,7 @@ public class Containers {
         Set hashSet = new HashSet();
         hashSet.add(new Rectangle(10, 10));
         hashSet.add(new Rectangle(10, 10));
+
         Set treeSet = new TreeSet();
         treeSet.add(new Rectangle(10, 10));
         treeSet.add(new Rectangle(10, 11));

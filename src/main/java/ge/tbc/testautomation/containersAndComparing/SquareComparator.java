@@ -16,3 +16,11 @@ public class SquareComparator implements Comparator {
         return -1;
     }
 }
+
+// WITH GENERICS
+//public class SquareComparator implements Comparator<Square> {
+//    @Override
+//    public int compare(Square o1, Square o2) {
+//        return Double.compare(o1.getArea(), o2.getArea());
+//    }
+//}
